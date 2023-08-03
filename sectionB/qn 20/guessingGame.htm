@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+// let guessedNumber;
+// //window.addEventListener("click", randomly)
+//  function random(min, max){
+// return Math.floor(Math.random() *(max - min)+ min);
+//  }
+// //var random= Math.floor(Math.random * 100) +1;
+// guessedNumber = random(1,100);
+// console.log(guessedNumber);
+// let tries = 0
+// function guessGame(){
+//     const  get_inputs = document.getElementById("number").value
+//     const button_game = document.getElementById("makeguess")
+//     let UnorderedList = document.getElementById("guesses")
+//     let listElement = document.createElement("li")
+//     listElement.setAttribute
+//     let spanElement = document.getElementById("result")
+//         if(get_inputs < guessedNumber){
+//            spanElement = document.getElementById("result").innerHTML="too low!"
+//            listElement.setAttribute("class", "low")
+//          UnorderedList.appendChild(listElement).innerHTML = get_inputs
+//         tries++
+//         }
+//         else if(get_inputs > guessedNumber){
+//             listElement.setAttribute("class", "high")
+//             spanElement = document.getElementById("result").innerHTML="too high!"
+//          UnorderedList.appendChild(listElement).innerHTML = get_inputs
+//          tries++
+//         }
+//         else if(get_inputs == guessedNumber){
+//             tries++
+//             spanElement = document.getElementById("result").innerHTML=`you get it right in ${tries} tries`
+//             UnorderedList.appendChild(listElement).innerHTML = get_inputs
+//              button_game.disabled =true;
+//             }
+//             }
+let random;
+function randomly(min, max){
+    return Math.floor(Math.random() *(max-min)+min);
+    //return random number between 0 and 1
+}
+random= randomly(1,100);
+console.log(random);
+var tries=0;
+function guessGame(){
+var inputs= document.getElementById("number").value
+var result= document.getElementById("result")
+var list= document.getElementById("guesses")
+var newList= document.createElement("li")
+var button= document.getElementById("makeguess")
+list.setAttribute
+if(inputs<random){
+    result.innerHTML= "Too low!"
+    newList.setAttribute("class", "low")
+    list.appendChild(newList).innerHTML= inputs
+    tries++
+}
+else if(inputs>random){
+    result.innerHTML= "Too high"
+    newList.setAttribute("class", "high")
+    list.appendChild(newList).innerHTML= inputs
+    tries++
+}else if(inputs==random){
+    tries++
+    result.innerHTML=`You got it right in ${tries} trie(s)`
+    newList.setAttribute("class", "none")
+    list.appendChild(newList).innerHTML= inputs
+    button.disabled=true
+}
+}
+</script>
+    <link rel="stylesheet" href="n23.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guessing Game</h1>
+    <div>
+        <input type="number" size="16" id="number">
+        <button id="makeguess" onclick="guessGame()">Make Guess</button>
+        <span id="result"></span>
+    </div>
+    <p>Your past guesses:</p>
+    <ul id="guesses"></ul>
+</body>
+</html>
